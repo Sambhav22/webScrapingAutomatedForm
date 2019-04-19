@@ -9,19 +9,39 @@ pause(2, ScrapeExample);
 function ScrapeExample() {
   console.log("Scrapping the page");
 
-  driver.findElement(By.id("name")).sendKeys("Sambhav Jain");
+  driver
+    .findElement(By.id("name"))
+    .sendKeys("Sambhav Jain")
+    .then(null, function(exception) {
+      console.log(exception.name);
+    });
 
-  driver.findElement(By.xpath('//input[@value="other"]')).click();
+  driver
+    .findElement(By.xpath('//input[@value="other"]'))
+    .click()
+    .then(null, function(exception) {
+      console.log(exception.name);
+    });
 
-  driver.findElement(By.xpath('//input[@type="checkbox"]')).click();
+  driver
+    .findElement(By.xpath('//input[@type="checkbox"]'))
+    .click()
+    .then(null, function(exception) {
+      console.log(exception.name);
+    });
 
-  driver.findElements(By.id("fruits")).then(function(value) {
-    for (var i = 0; i < value.length; i++) {
-      value[i].getText().then(function(text) {
-        console.log(text);
-      });
-    }
-  });
+  driver
+    .findElements(By.id("fruits"))
+    .then(function(value) {
+      for (var i = 0; i < value.length; i++) {
+        value[i].getText().then(function(text) {
+          console.log(text);
+        });
+      }
+    })
+    .then(null, function(exception) {
+      console.log(exception.name);
+    });
 
   driver.findElement(By.xpath('//option[@value="BMW"]')).click();
 
