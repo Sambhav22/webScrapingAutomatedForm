@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "chromedriver": "^2.43.4",
+    "chromedriver": "^2.46.0",
     "fs": "0.0.1-security",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
